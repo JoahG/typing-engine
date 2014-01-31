@@ -33,12 +33,14 @@ $ ->
 		currentTime = 0
 		wordTimer = setInterval ( -> currentTime += 1 ), 10
 
+	# call stop() function when student is done typing
 	stop = ->
 		clearInterval wordTimer
 		wordTimer = null
 		currentTime = 0
 		$(display_selector).text "Your average wpm is #{averageWPM()}"
 		typing = false
+		# can add AJAX callback function to POST WPM
 
 	keypress = (e) ->
 		char = String.fromCharCode(e.keyCode)
@@ -51,4 +53,6 @@ $ ->
 
 		if charsTyped == 12	
 			resetTimer()
-			$(display_selector).text('#{averageWPM()} WPM')
+			$(display_selector).text averageWPM() + 'WPM'
+
+	setup()
