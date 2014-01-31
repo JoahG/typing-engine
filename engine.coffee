@@ -38,7 +38,7 @@ $ ->
 		clearInterval wordTimer
 		wordTimer = null
 		currentTime = 0
-		$(display_selector).text "Your average wpm is #{averageWPM()}"
+		$(display_selector).text "Your average wpm is " + averageWPM()
 		typing = false
 		# can add AJAX callback function to POST WPM
 
