@@ -9,7 +9,7 @@ $ ->
 	charsTyped = null
 	times = null
 
-	setup = (w) ->
+	setup = ->
 		typing = false
 		currentTime = 0
 		wordTimer = null
